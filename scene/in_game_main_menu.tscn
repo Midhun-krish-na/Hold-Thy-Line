@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d3oyosxves0ai"]
+
+[ext_resource type="Script" uid="uid://di3xm8lttiorm" path="res://script/in_game_main_menu.gd" id="1_trmir"]
+
+[node name="InGameMainMenu" type="Control" unique_id=658166929]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_trmir")
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" type="CenterContainer" parent="." unique_id=1876971097]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4826389
+anchor_top = 0.4691358
+anchor_right = 0.5173611
+anchor_bottom = 0.5308642
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="PauseMenu" unique_id=289074534]
+layout_mode = 2
+
+[node name="SurrenderButton" type="Button" parent="PauseMenu/Menu" unique_id=1326507572]
+layout_mode = 2
+text = "Surrender"
+
+[node name="MainMenuButton" type="Button" parent="PauseMenu/Menu" unique_id=1053239391]
+layout_mode = 2
+text = "MainMenu"
+
+[node name="QuitButton" type="Button" parent="PauseMenu/Menu" unique_id=1920532360]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="PauseMenu/Menu/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

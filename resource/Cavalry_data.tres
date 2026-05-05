@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="UnitStats" format=3 uid="uid://bvy687st65cp2"]
+
+[ext_resource type="Script" uid="uid://cpfjmkhh82kch" path="res://resource/UnitStats.gd" id="1_tf8oi"]
+
+[resource]
+script = ExtResource("1_tf8oi")
+unit_name = "Cavalry"
+health = 150
+damage = 40
+speed = 40.0
+Unit_cost = 200
+train_time = 30.0
+metadata/_custom_type_script = "uid://cpfjmkhh82kch"

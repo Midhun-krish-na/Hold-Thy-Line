@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://n0h60x7a3824"]
+
+[ext_resource type="PackedScene" uid="uid://cxidcguxe630q" path="res://scene/control.tscn" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://b563thh3uejd7" path="res://script/main.gd" id="1_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://d3oyosxves0ai" path="res://scene/in_game_main_menu.tscn" id="2_wp4xf"]
+
+[node name="Main" type="Node2D" unique_id=859643005]
+script = ExtResource("1_v0l8b")
+
+[node name="Control" parent="." unique_id=1634914113 instance=ExtResource("1_itxqv")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 1
+grow_vertical = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Camera2D" type="Camera2D" parent="Control" unique_id=1574860646]
+position = Vector2(576, 324)
+
+[node name="InGameMainMenu" parent="." unique_id=658166929 instance=ExtResource("2_wp4xf")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

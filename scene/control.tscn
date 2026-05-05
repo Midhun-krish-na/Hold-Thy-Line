@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cxidcguxe630q"]
+
+[ext_resource type="Script" uid="uid://bfpnp1ryec4vf" path="res://script/control.gd" id="1_vrdfc"]
+[ext_resource type="Resource" uid="uid://cefgbr2itivwh" path="res://resource/Infantry_data.tres" id="2_8g54p"]
+[ext_resource type="Resource" uid="uid://de8n746651ups" path="res://resource/Archer_data.tres" id="2_mnow5"]
+[ext_resource type="Resource" uid="uid://bvy687st65cp2" path="res://resource/Cavalry_data.tres" id="4_j0f1v"]
+
+[node name="Control" type="Control" unique_id=1634914113]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vrdfc")
+Infantry = ExtResource("2_8g54p")
+Archer = ExtResource("2_mnow5")
+Cavalry = ExtResource("4_j0f1v")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1487940962]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.9521605
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Infantry" type="Button" parent="HBoxContainer" unique_id=46213429]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Infantry"
+
+[node name="Archer" type="Button" parent="HBoxContainer" unique_id=445827724]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Archer"
+
+[node name="Cavalry" type="Button" parent="HBoxContainer" unique_id=1168069448]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cavalry"
+
+[connection signal="pressed" from="HBoxContainer/Infantry" to="." method="_on_infantry_pressed"]
+[connection signal="pressed" from="HBoxContainer/Archer" to="." method="_on_archer_pressed"]
+[connection signal="pressed" from="HBoxContainer/Cavalry" to="." method="_on_cavalry_pressed"]

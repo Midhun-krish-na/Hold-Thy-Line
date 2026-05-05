@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://0bnyjdg6310s"]
+
+[ext_resource type="Script" uid="uid://b6ih6gnowdvh6" path="res://script/training_panel.gd" id="1_3aom8"]
+[ext_resource type="Resource" uid="uid://cefgbr2itivwh" path="res://resource/Infantry_data.tres" id="2_sfgvk"]
+[ext_resource type="Resource" uid="uid://de8n746651ups" path="res://resource/Archer_data.tres" id="3_b8u0g"]
+[ext_resource type="Resource" uid="uid://bvy687st65cp2" path="res://resource/Cavalry_data.tres" id="4_sty64"]
+
+[node name="TrainingPanel" type="Control" unique_id=25700408]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3aom8")
+infantry_data = ExtResource("2_sfgvk")
+archer_data = ExtResource("3_b8u0g")
+cavalry_data = ExtResource("4_sty64")
+metadata/_edit_use_anchors_ = true
+
+[node name="TrainList" type="VBoxContainer" parent="." unique_id=1571056158]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.11111111
+anchor_right = 0.234375
+anchor_bottom = 1.0
+grow_vertical = 2
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="InfantryTrain" type="Button" parent="TrainList" unique_id=389469754]
+layout_mode = 2
+text = "Infantry"
+
+[node name="ArcherTrain" type="Button" parent="TrainList" unique_id=898496127]
+layout_mode = 2
+text = "Archer"
+
+[node name="CavalryTrain" type="Button" parent="TrainList" unique_id=490523546]
+layout_mode = 2
+text = "Cavalry"
+
+[node name="HeaderBox" type="HBoxContainer" parent="." unique_id=120396561]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.097222224
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TroopCounter" type="HBoxContainer" parent="HeaderBox" unique_id=78260209]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InfantryCount" type="Label" parent="HeaderBox/TroopCounter" unique_id=209952311]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Infantry: "
+horizontal_alignment = 1
+
+[node name="ArcherCount" type="Label" parent="HeaderBox/TroopCounter" unique_id=440546932]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Archer: "
+horizontal_alignment = 1
+
+[node name="CavalryCount" type="Label" parent="HeaderBox/TroopCounter" unique_id=316904418]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Cavlary "
+horizontal_alignment = 1
+
+[node name="CookingBox" type="VBoxContainer" parent="HeaderBox" unique_id=442107693]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InTraining" type="Label" parent="HeaderBox/CookingBox" unique_id=83972636]
+layout_mode = 2
+text = "Troops cooking"
+horizontal_alignment = 1
+
+[node name="CookingCount" type="HBoxContainer" parent="HeaderBox/CookingBox" unique_id=1930069119]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InfantryS" type="Label" parent="HeaderBox/CookingBox/CookingCount" unique_id=843877596]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ArcherS" type="Label" parent="HeaderBox/CookingBox/CookingCount" unique_id=599921670]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CavalryS" type="Label" parent="HeaderBox/CookingBox/CookingCount" unique_id=87073205]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CookingDetails" type="VBoxContainer" parent="." unique_id=727755231]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234375
+anchor_top = 0.11111111
+anchor_right = 0.9965278
+anchor_bottom = 0.9259259
+grow_horizontal = 0
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="InfantryTotalTime" type="Label" parent="CookingDetails" unique_id=1894222091]
+layout_mode = 2
+
+[node name="ArcherTotalTime" type="Label" parent="CookingDetails" unique_id=924298207]
+layout_mode = 2
+
+[node name="CavalryTotalTime" type="Label" parent="CookingDetails" unique_id=6622174]
+layout_mode = 2
+
+[node name="BottomBar" type="HBoxContainer" parent="." unique_id=219535769]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.234375
+anchor_top = 0.9259259
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+alignment = 2
+
+[node name="BackButton" type="Button" parent="BottomBar" unique_id=1838005659]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Back
+"
+
+[connection signal="pressed" from="TrainList/InfantryTrain" to="." method="_on_infantry_train_pressed"]
+[connection signal="pressed" from="TrainList/ArcherTrain" to="." method="_on_archer_train_pressed"]
+[connection signal="pressed" from="TrainList/CavalryTrain" to="." method="_on_cavalry_train_pressed"]
+[connection signal="pressed" from="BottomBar/BackButton" to="." method="_on_back_button_pressed"]

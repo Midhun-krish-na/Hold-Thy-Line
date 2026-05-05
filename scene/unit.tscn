@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://lhuvcygnb0d2"]
+
+[ext_resource type="Script" uid="uid://b057tp2n47j72" path="res://script/unit.gd" id="1_jb630"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="2_5s1h1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_soyqf"]
+radius = 61.400326
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35wfo"]
+radius = 60.074955
+
+[node name="Unit" type="CharacterBody2D" unique_id=1299189115]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_jb630")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=534553987]
+texture = ExtResource("2_5s1h1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=695885867]
+shape = SubResource("CircleShape2D_soyqf")
+debug_color = Color(0, 0.6, 0.69803923, 0.6627451)
+
+[node name="hitbox" type="Area2D" parent="." unique_id=1060647678]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=202251698]
+shape = SubResource("CircleShape2D_35wfo")
+debug_color = Color(0.94776434, 0.14764008, 0.44871354, 0.41960785)
